@@ -1,284 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy TechSolution - Technology, Design, And Marketing</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        
-        body { background-color: #0a0a0a; color: white; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        
-        .hero-bg {
-            position: relative;
-            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), 
-                        url('assets/test.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyTech Solution - Technology, Design, And Marketing</title>
 
-        .gradient-text {
-            background: linear-gradient(90deg, #c084fc, #6366f1, #2dd4bf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
 
-        .nav-blur {
-            backdrop-filter: blur(12px);
-            background: rgba(10, 10, 10, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-        .service-card {
-            border: 1px solid #1e293b;
-            background: rgba(15, 23, 42, 0.4);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
+body {
+    background-color: #070b10;
+    color: #e5eef5;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
 
-        .service-card:hover { border-color: #3b82f6; transform: translateY(-5px); }
+/* HERO */
+.hero-bg {
+    background:
+        linear-gradient(rgba(7,11,16,0.5), rgba(7,11,16,0.5)),
+        url('assets/test.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
-        .tool-icon {
-            width: 60px; height: 60px;
-            background: #111;
-            border: 1px solid #333;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            transition: 0.3s;
-        }
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(63, 224, 197, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(95, 179, 255, 0.1) 0%, transparent 20%);
+    z-index: -1;
+}
 
-        .tool-icon:hover { border-color: #6366f1; transform: scale(1.1); }
+/* TEXT */
+.gradient-text {
+    background: linear-gradient(90deg, #3fe0c5, #5fb3ff, #7fffd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .project-card {
-            background: #111;
-            border: 1px solid #1e293b;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-        }
+/* NAV */
+.nav-blur {
+    backdrop-filter: blur(14px);
+    background: rgba(7,11,16,0.1);
+    border-bottom: 1px solid rgba(120,180,180,0.15);
+}
 
-        .project-card:hover { transform: scale(1.02); border-color: #6366f1; }
-    </style>
+/* CARDS */
+.service-card {
+    border: 1px solid rgba(120,180,180,0.18);
+    background: rgba(14,24,33,0.55);
+    backdrop-filter: blur(14px);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    border-color: #3fe0c5;
+    transform: translateY(-6px);
+}
+
+/* ICONS */
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(14,24,33,0.7);
+    border: 1px solid rgba(120,180,180,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.tool-icon:hover {
+    border-color: #3fe0c5;
+    transform: scale(1.08);
+}
+
+/* PROJECTS */
+.project-card {
+    border: 1px solid rgba(120,180,180,0.15);
+    background: rgba(14,24,33,0.45);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    border-color: rgba(63,224,197,0.45);
+    transform: translateY(-4px);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(7,11,16,0.9) 100%);
+}
+
+.project-logo {
+    width: 60px;
+    height: 60px;
+    background: rgba(7,11,16,0.9);
+    border: 2px solid rgba(120,180,180,0.25);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: #3fe0c5;
+    position: absolute;
+    bottom: -30px;
+    left: 24px;
+    z-index: 10;
+}
+
+/* STATUS */
+.status-badge {
+    font-size: 10px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(120,180,180,0.25);
+    color: #9aa6b2;
+    display: inline-block;
+}
+
+.status-live {
+    color: #3fe0c5;
+    border-color: rgba(63,224,197,0.6);
+    background: rgba(63,224,197,0.1);
+}
+
+.status-build {
+    color: #fbbf24;
+    border-color: rgba(251,191,36,0.6);
+    background: rgba(251,191,36,0.1);
+}
+
+/* BUTTON */
+.primary-btn {
+    background: linear-gradient(135deg, #3fe0c5, #5fb3ff);
+    color: #041014;
+}
+</style>
 </head>
+
 <body>
 
-    <nav class="fixed top-0 w-full z-50 nav-blur">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <img src="assets/logo.png" 
-                 alt="ETS Logo" 
-                 class="w-10 h-10 rounded-lg object-contain shadow-lg">
-            <div class="flex flex-col leading-tight">
-                <span class="font-bold text-xl tracking-tighter">ETS</span>
-                <span class="text-[10px] text-gray-400 uppercase tracking-widest font-medium">Easy TechSolution</span>
-            </div>
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 nav-blur">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+        <img src="assets/logo.png" class="w-10 h-10 rounded-lg object-contain">
+        <div>
+<span class="font- text-xl" style="font-family: 'Inter', cursive;">
+  <b>EasyTech Solution</b>
+</span>
         </div>
-        
-        <div class="hidden md:flex gap-8 text-xs font-semibold uppercase tracking-widest text-gray-300">
-            <a href="#" class="hover:text-purple-400 transition">Home</a>
-            <a href="#about" class="hover:text-purple-400 transition">About</a>
-            <a href="#services" class="hover:text-purple-400 transition">Services</a>
-            <a href="#work" class="hover:text-purple-400 transition">Case-Studies</a>
-            <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
-        </div>
-        
-        <button class="bg-white text-black px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-purple-600 hover:text-white transition-all">
-            Register
-        </button>
+    </div>
+
+    <div class="hidden md:flex gap-8 text-xs uppercase tracking-widest text-gray-300">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Case-Studies</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>
 
-    <section class="hero-bg min-h-screen flex items-center pt-20 px-6 text-center">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
-                <span class="gradient-text">Technology, Design, And Marketing</span><br>
-                <span class="text-white text-4xl md:text-6xl">— built for scale.</span>
-            </h1>
-            <p class="text-gray-300 mb-10 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                We partner with ambitious brands to create high-performance digital products and growth strategies.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="bg-purple-600 hover:bg-purple-700 px-10 py-4 rounded-full font-bold transition-all">Get in touch</button>
-                <button class="backdrop-blur-md border border-gray-600 hover:bg-white/10 px-10 py-4 rounded-full font-bold transition-all">View work</button>
-            </div>
+<!-- HERO -->
+<section class="hero-bg min-h-screen flex items-center pt-20 px-6 text-center relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-[#3fe0c5]/10 rounded-full filter blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-72 h-72 bg-[#5fb3ff]/10 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+</div>
+<div class="max-w-5xl mx-auto relative z-10">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+        <span class="gradient-text">Technology, Design, And Marketing</span><br>
+        <span class="text-white text-4xl md:text-6xl">— built for scale.</span>
+    </h1>
+    <p class="text-gray-400 mb-10 max-w-2xl mx-auto">
+        We partner with ambitious brands to create high-performance digital products.
+    </p>
+    <div class="flex justify-center gap-4">
+        <button class="primary-btn px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform">Get in touch</button>
+        <button class="border border-gray-600 px-10 py-4 rounded-full font-bold hover:border-[#3fe0c5] hover:text-[#3fe0c5] transition">View work</button>
+    </div>
+</div>
+</section>
+
+<!-- STATS -->
+<section class="py-16 px-6 max-w-6xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="border border-gray-800 rounded-2xl p-6 hover:border-[#3fe0c5] transition">
+        <div class="text-3xl font-bold text-[#3fe0c5] mb-2">50+</div>
+        <div class="text-gray-400 text-sm">Projects Completed</div>
+    </div>
+    <div class="border border-gray-800 rounded-2xl p-6 hover:border-[#5fb3ff] transition">
+        <div class="text-3xl font-bold text-[#5fb3ff] mb-2">90%</div>
+        <div class="text-gray-400 text-sm">Client Satisfaction</div>
+    </div>
+    <div class="border border-gray-800 rounded-2xl p-6 hover:border-[#7fffd4] transition">
+        <div class="text-3xl font-bold text-[#7fffd4] mb-2">10+</div>
+        <div class="text-gray-400 text-sm">Team Members</div>
+    </div>
+    <div class="border border-gray-800 rounded-2xl p-6 hover:border-[#3fe0c5] transition">
+        <div class="text-3xl font-bold text-[#3fe0c5] mb-2">3+</div>
+        <div class="text-gray-400 text-sm">Years Experience</div>
+    </div>
+</div>
+</section>
+
+<!-- ABOUT (RESTORED) -->
+<section id="about" class="py-24 px-6 max-w-7xl mx-auto border-b border-gray-900">
+<div class="flex flex-col md:flex-row items-center gap-12">
+
+<div class="md:w-1/2">
+    <h2 class="text-3xl font-bold mb-8 uppercase tracking-tighter">
+        About <span class="text-[#3fe0c5]">Us</span>
+    </h2>
+    <div class="space-y-6 text-gray-400 text-lg">
+        <p>
+            Nexovia Digistudio operates as a small, system-driven digital studio built for precision, not noise.
+Every engagement begins with outcome definition, followed by input verification and correct path selection. Nothing moves forward without clarity.
+        </p>
+        <p>
+            We don't chase trends or overpromise scale. We design, build, and optimize through structured thinking, controlled execution, and deliberate decision-making. Each project is treated as a system—analyzed, calibrated, and executed to produce measurable results.
+        </p>
+        <p>
+            Nexovia exists to turn complexity into structure, chaos into flow, and ideas into outcomes—quietly, efficiently, and with intent.
+        </p>
+    </div>
+</div>
+
+<div class="md:w-1/2 flex justify-center">
+    <div class="relative">
+        <div class="absolute -inset-4 bg-[#3fe0c5]/20 rounded-full blur-2xl"></div>
+        <div class="relative w-72 h-72 rounded-full overflow-hidden border border-[#3fe0c5]/30">
+            <img src="assets/element1.png" class="w-full h-full object-cover grayscale hover:grayscale-0 transition">
         </div>
-    </section>
+    </div>
+</div>
 
-    <section id="about" class="py-24 px-6 max-w-7xl mx-auto border-b border-gray-900">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-            
-            <div class="md:w-1/2 text-left">
-                <h2 class="text-3xl font-bold mb-8 uppercase tracking-tighter">
-                    About <span class="text-purple-400">Us</span>
-                </h2>
-                <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
-                    <p>
-                        EasyTechServices (ETS) works as a white-label digital partner, 
-                        supporting agencies and businesses with reliable execution across 
-                        design, development, and digital growth services.
-                    </p>
-                    <p>
-                        We collaborate behind the scenes handling delivery, 
-                        optimization, and technical implementation — while our 
-                        partners manage strategy and client relationships.
-                    </p>
-                    <p>
-                        Our focus is simple: consistent quality, clear communication, and 
-                        long-term partnerships built on trust.
-                    </p>
-                </div>
-                <button class="mt-10 text-purple-400 font-bold hover:text-purple-300 transition flex items-center gap-2">
-                    More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-            </div>
+</div>
+</section>
 
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-purple-600/20 rounded-full blur-2xl"></div>
-                    
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-purple-500/30 shadow-2xl shadow-purple-500/10">
-                        <img 
-                            src="assets/element1.png" 
-                            alt="Our Team" 
-                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                        >
-                    </div>
-                </div>
-            </div>
+<!-- SERVICES -->
+<section id="services" class="py-24 px-6 max-w-6xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-12">Our <span class="text-[#3fe0c5]">Services</span></h2>
 
-        </div>
-
-    <section id="services" class="py-24 px-6 max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-2 uppercase tracking-tighter">Our <span class="text-purple-400">Services</span></h2>
-        <p class="text-gray-400 mb-16">We help brands design, build, and optimize digital products that deliver measurable results.</p>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="service-card p-10 rounded-3xl text-center">
-                <i data-lucide="megaphone" class="mx-auto mb-6 text-white w-12 h-12"></i>
-                <h3 class="text-sm font-bold uppercase tracking-wider leading-tight">Digital Marketing</h3>
-            </div>
-            <div class="service-card p-10 rounded-3xl text-center">
-                <i data-lucide="globe" class="mx-auto mb-6 text-white w-12 h-12"></i>
-                <h3 class="text-sm font-bold uppercase tracking-wider leading-tight">Web Design & Development</h3>
-            </div>
-            <div class="service-card p-10 rounded-3xl text-center">
-                <i data-lucide="pen-tool" class="mx-auto mb-6 text-white w-12 h-12"></i>
-                <h3 class="text-sm font-bold uppercase tracking-wider leading-tight">Graphics Designing</h3>
-            </div>
-            <div class="service-card p-10 rounded-3xl text-center">
-                <i data-lucide="edit-3" class="mx-auto mb-6 text-white w-12 h-12"></i>
-                <h3 class="text-sm font-bold uppercase tracking-wider leading-tight">Content Writing & Creation</h3>
-            </div>
-        </div>
-        <button class="mt-12 bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-2 rounded-full text-xs font-bold uppercase">More</button>
-    </section>
-
-    <section id="stack" class="py-20 bg-[#0d0d0d] px-6 text-center">
-        <h2 class="text-3xl font-bold mb-12">Our <span class="text-blue-400">Stack</span></h2>
-        <div class="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
-            <div class="tool-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="35"></div>
-            <div class="tool-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="35"></div>
-            <div class="tool-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="35"></div>
-            <div class="tool-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="25"></div>
-            <div class="tool-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" width="35"></div>
-            <div class="tool-icon font-bold text-orange-500 text-xs">SEO</div>
-        </div>
-    </section>
-
-    <section id="work" class="py-24 px-6 max-w-7xl mx-auto">
-        <p class="text-center text-gray-500 text-sm uppercase mb-2 font-bold tracking-widest">Our Work</p>
-        <h2 class="text-4xl font-bold text-center mb-6 uppercase">Projects</h2>
-        <p class="text-gray-400 text-center mb-16 max-w-3xl mx-auto">We actively manage and support multiple live projects across different digital environments.</p>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="project-card">
-                <img src="assets/desu.png" class="h-56 w-full object-cover">
-                <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-3">DSEU</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">DSEU.ac.in is an official educational website designed to deliver a clear, structured, and reliable digital experience.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-bold text-yellow-500">#Web Design</span> <span class="text-xs font-bold text-yellow-500">#Web Development</span>
-                    </div>
-                    <button class="bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold transition uppercase text-xs">Open</button>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/justfordogscare.png" class="h-56 w-full object-cover">
-                <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-3">JustForDogs</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">JustForDogs.in is a dedicated platform for dog boarding, grooming, and related pet services.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-bold text-yellow-500">#Web Design</span> <span class="text-xs font-bold text-yellow-500">#SEO</span>
-                    </div>
-                    <button class="bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold transition uppercase text-xs">Open</button>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/aeronest.png" class="h-56 w-full object-cover">
-                <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-3">Aeronest</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">AC4U.in is a streamlined website designed to present air conditioning services clearly.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-bold text-yellow-500">#Web Design</span> <span class="text-xs font-bold text-yellow-500">#SEO</span>
-                    </div>
-                    <button class="bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold transition uppercase text-xs">Open</button>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/recruit-g.png" class="h-56 w-full object-cover">
-                <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-3">Recruit-G</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Recruit-G.com is a professionally built recruitment platform enhancing visibility and site performance.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-bold text-yellow-500">#Web Design</span> <span class="text-xs font-bold text-yellow-500">#SEO</span>
-                    </div>
-                    <button class="bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold transition uppercase text-xs">Open</button>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/futebolplayhd.png" class="h-56 w-full object-cover">
-                <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-3">FutebolPlayHD</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Futebol Play HD.vip is a content-driven platform implementing targeted SEO strategies.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-bold text-yellow-500">#SEO</span>
-                    </div>
-                    <button class="bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold transition uppercase text-xs">Open</button>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="assets/globalweb.png" class="h-56 w-full object-cover">
-                <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-3">Globalwebsters</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">GlobalWebsters.com handles SEO optimization and content writing to improve search visibility.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-bold text-yellow-500">#SEO</span> <span class="text-xs font-bold text-yellow-500">#Content Writing</span>
-                    </div>
-                    <button class="bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold transition uppercase text-xs">Open</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <footer id="contact" class="relative py-20 text-center border-t border-gray-900 mt-20 bg-cover bg-center bg-no-repeat" 
-        style="background-image: linear-gradient(rgba(0, 0, 0, 40%), rgba(10, 10, 10, 70%)), url('assets/element2.png');">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     
-    <div class="relative z-10">
-        <h2 class="text-3xl font-bold mb-10">Contact</h2>
-        <div class="flex justify-center gap-6 mb-12">
-            <div class="tool-icon border-green-500 text-green-500"><i data-lucide="phone"></i></div>
-            <div class="tool-icon border-pink-500 text-pink-500"><i data-lucide="instagram"></i></div>
-            <div class="tool-icon border-blue-500 text-blue-500"><i data-lucide="linkedin"></i></div>
+    <!-- Digital Marketing -->
+    <div class="service-card p-8 rounded-3xl flex flex-col items-center group">
+        <div class="tool-icon mb-6">
+            <i data-lucide="megaphone" class="w-8 h-8 text-[#3fe0c5]"></i>
         </div>
-        <p class="text-gray-600 text-[10px] tracking-widest uppercase">© 2025 EASY TECH SERVICE, DELHI 110015. All Rights Reserved.</p>
+        <h3 class="text-lg font-semibold mb-2">Digital Marketing</h3>
+        <p class="text-xs text-gray-500 mb-4">SEO, PPC, Social Media & Growth Strategies</p>
+        <div class="mt-auto pt-4">
+            <button class="text-xs text-[#3fe0c5] border border-[#3fe0c5]/30 rounded-full px-4 py-1.5 hover:bg-[#3fe0c5]/10 transition">Learn More</button>
+        </div>
+    </div>
+    
+    <!-- Web Development -->
+    <div class="service-card p-8 rounded-3xl flex flex-col items-center group">
+        <div class="tool-icon mb-6">
+            <i data-lucide="code-2" class="w-8 h-8 text-[#5fb3ff]"></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Web Development</h3>
+        <p class="text-xs text-gray-500 mb-4">Custom Websites, Apps & E-commerce</p>
+        <div class="mt-auto pt-4">
+            <button class="text-xs text-[#5fb3ff] border border-[#5fb3ff]/30 rounded-full px-4 py-1.5 hover:bg-[#5fb3ff]/10 transition">Learn More</button>
+        </div>
+    </div>
+    
+    <!-- Graphics Design -->
+    <div class="service-card p-8 rounded-3xl flex flex-col items-center group">
+        <div class="tool-icon mb-6">
+            <i data-lucide="palette" class="w-8 h-8 text-[#7fffd4]"></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Graphics Design</h3>
+        <p class="text-xs text-gray-500 mb-4">Branding, UI/UX & Visual Identity</p>
+        <div class="mt-auto pt-4">
+            <button class="text-xs text-[#7fffd4] border border-[#7fffd4]/30 rounded-full px-4 py-1.5 hover:bg-[#7fffd4]/10 transition">Learn More</button>
+        </div>
+    </div>
+    
+    <!-- Content Creation -->
+    <div class="service-card p-8 rounded-3xl flex flex-col items-center group">
+        <div class="tool-icon mb-6">
+            <i data-lucide="pen-tool" class="w-8 h-8 text-[#3fe0c5]"></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Content Creation</h3>
+        <p class="text-xs text-gray-500 mb-4">Copywriting, Copywriting & Social Content</p>
+        <div class="mt-auto pt-4">
+            <button class="text-xs text-[#3fe0c5] border border-[#3fe0c5]/30 rounded-full px-4 py-1.5 hover:bg-[#3fe0c5]/10 transition">Learn More</button>
+        </div>
+    </div>
+    
+</div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="py-24 px-6 max-w-6xl mx-auto">
+<h2 class="text-3xl font-bold mb-12">Our <span class="text-[#3fe0c5]">Projects</span></h2>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    
+    <!-- Project 1: DSEU -->
+    <div class="project-card group">
+        <img src="assets/desu.png" class="h-56 w-full object-cover">
+        <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-3 group-hover:text-[#3fe0c5] transition">DSEU</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">DSEU.ac.in is an official educational website designed to deliver a clear, structured, and reliable digital experience.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs font-bold text-[#3fe0c5]">#Web Design</span>
+                <span class="text-xs font-bold text-[#3fe0c5]">#Web Development</span>
+            </div>
+            <button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button>
+        </div>
+    </div>
+
+    <!-- Project 2: JustForDogs -->
+    <div class="project-card group">
+        <img src="assets/justfordogscare.png" class="h-56 w-full object-cover">
+        <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-3 group-hover:text-[#3fe0c5] transition">JustForDogs</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">JustForDogs.in is a dedicated platform for dog boarding, grooming, and related pet services.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs font-bold text-[#3fe0c5]">#Web Design</span>
+                <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
+            </div>
+            <button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button>
+        </div>
+    </div>
+
+    <!-- Project 3: Aeronest -->
+    <div class="project-card group">
+        <img src="assets/aeronest.png" class="h-56 w-full object-cover">
+        <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-3 group-hover:text-[#3fe0c5] transition">Aeronest</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">AC4U.in is a streamlined website designed to present air conditioning services clearly.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs font-bold text-[#3fe0c5]">#Web Design</span>
+                <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
+            </div>
+            <button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button>
+        </div>
+    </div>
+
+    <!-- Project 4: Recruit-G -->
+    <div class="project-card group">
+        <img src="assets/recruit-g.png" class="h-56 w-full object-cover">
+        <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-3 group-hover:text-[#3fe0c5] transition">Recruit-G</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Recruit-G.com is a professionally built recruitment platform enhancing visibility and site performance.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs font-bold text-[#3fe0c5]">#Web Design</span>
+                <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
+            </div>
+            <button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button>
+        </div>
+    </div>
+
+    <!-- Project 5: FutebolPlayHD -->
+    <div class="project-card group">
+        <img src="assets/futebolplayhd.png" class="h-56 w-full object-cover">
+        <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-3 group-hover:text-[#3fe0c5] transition">FutebolPlayHD</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Futebol Play HD.vip is a content-driven platform implementing targeted SEO strategies.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
+            </div>
+            <button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button>
+        </div>
+    </div>
+
+    <!-- Project 6: Globalwebsters -->
+    <div class="project-card group">
+        <img src="assets/globalweb.png" class="h-56 w-full object-cover">
+        <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-3 group-hover:text-[#3fe0c5] transition">Globalwebsters</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">GlobalWebsters.com handles SEO optimization and content writing to improve search visibility.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
+                <span class="text-xs font-bold text-[#7fffd4]">#Content Writing</span>
+            </div>
+            <button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- View All Projects Button -->
+<div class="text-center mt-12">
+    <button class="border border-gray-600 px-8 py-3 rounded-full font-medium text-sm hover:border-[#3fe0c5] hover:text-[#3fe0c5] transition">
+        View All Projects
+    </button>
+</div>
+</section>
+<!-- CONTACT -->
+<section class="py-8 px-6 max-w-4xl mx-auto">
+<h2 class="text-center text-3xl font-bold mb-16">Get In <span class="text-[#3fe0c5]">Touch</span></h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div>
+        <h3 class="text-xl font-bold mb-6">Let's Discuss Your Project</h3>
+        <p class="text-gray-400 mb-8">Have a project in mind? Reach out to us and let's create something amazing together.</p>
+        
+        <div class="space-y-6">
+            <div class="flex items-start">
+                <div class="tool-icon mr-4 mt-1">
+                    <i data-lucide="mail" class="w-5 h-5 text-[#3fe0c5]"></i>
+                </div>
+                <div>
+                    <div class="font-bold">Email</div>
+                    <div class="text-gray-400">NULL</div>
+                </div>
+            </div>
+            
+            <div class="flex items-start">
+                <div class="tool-icon mr-4 mt-1">
+                    <i data-lucide="phone" class="w-5 h-5 text-[#5fb3ff]"></i>
+                </div>
+                <div>
+                    <div class="font-bold">Phone</div>
+                    <div class="text-gray-400">NULL</div>
+                </div>
+            </div>
+            
+            <div class="flex items-start">
+                <div class="tool-icon mr-4 mt-1">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-[#7fffd4]"></i>
+                </div>
+                <div>
+                    <div class="font-bold">Location</div>
+                    <div class="text-gray-400">NULL</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <form class="space-y-6">
+            <div>
+                <input type="text" placeholder="Your Name" class="w-full bg-[#0a121a] border border-gray-800 rounded-xl px-6 py-4 focus:border-[#3fe0c5] outline-none transition">
+            </div>
+            <div>
+                <input type="email" placeholder="Your Email" class="w-full bg-[#0a121a] border border-gray-800 rounded-xl px-6 py-4 focus:border-[#3fe0c5] outline-none transition">
+            </div>
+            <div>
+                <textarea placeholder="Your Message" rows="5" class="w-full bg-[#0a121a] border border-gray-800 rounded-xl px-6 py-4 focus:border-[#3fe0c5] outline-none transition"></textarea>
+            </div>
+            <button type="submit" class="primary-btn w-full py-4 rounded-xl font-bold">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="Footer" class="relative mt-16 text-center overflow-hidden">
+
+        <!-- bottom divider -->
+        <div class="my-16 h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+
+        <!-- brand + socials -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-gray-500 text-xs">
+
+            <div class="flex items-center gap-3">
+                <img src="assets/logo.png" class="w-24 h-24 object-contain">
+                <span class="uppercase tracking-widest">Easy TechSolution</span>
+            </div>
+
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-teal-400 transition">
+                    <i data-lucide="twitter"></i>
+                </a>
+                <a href="#" class="hover:text-teal-400 transition">
+                    <i data-lucide="linkedin"></i>
+                </a>
+                <a href="#" class="hover:text-teal-400 transition">
+                    <i data-lucide="mail"></i>
+                </a>
+            </div>
+        </div>
+
+        <p class="mt-8 text-[10px] text-gray-600 tracking-widest uppercase">
+            | © 2025 Easy TechSolution. All rights reserved.|
+        </p>
     </div>
 </footer>
+</section>
 
-    <script>lucide.createIcons();</script>
+<script>lucide.createIcons();</script>
 </body>
 </html>
