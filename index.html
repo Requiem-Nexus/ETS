@@ -171,6 +171,15 @@ body {
 .primary-btn {
     background: linear-gradient(135deg, #3fe0c5, #5fb3ff);
     color: #041014;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
 }
 </style>
 </head>
@@ -190,11 +199,11 @@ body {
     </div>
 
     <div class="hidden md:flex gap-8 text-xs uppercase tracking-widest text-gray-300">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#work">Case-Studies</a>
-        <a href="#contact">Contact</a>
+        <a href="#" class="hover:text-[#3fe0c5] transition">Home</a>
+        <a href="#about" class="hover:text-[#3fe0c5] transition">About</a>
+        <a href="#services" class="hover:text-[#3fe0c5] transition">Services</a>
+        <a href="#work" class="hover:text-[#3fe0c5] transition">Case-Studies</a>
+        <a href="#contact" class="hover:text-[#3fe0c5] transition">Contact</a>
     </div>
 </nav>
 
@@ -213,8 +222,8 @@ body {
         We partner with ambitious brands to create high-performance digital products.
     </p>
     <div class="flex justify-center gap-4">
-        <button class="primary-btn px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform">Get in touch</button>
-        <button class="border border-gray-600 px-10 py-4 rounded-full font-bold hover:border-[#3fe0c5] hover:text-[#3fe0c5] transition">View work</button>
+        <a href="#contact" class="primary-btn px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform">Get in touch</a>
+        <a href="#work" class="border border-gray-600 px-10 py-4 rounded-full font-bold hover:border-[#3fe0c5] hover:text-[#3fe0c5] transition">View work</a>
     </div>
 </div>
 </section>
@@ -296,7 +305,7 @@ on trust.
         <h3 class="text-lg font-semibold mb-2">Digital Marketing</h3>
         <p class="text-xs text-gray-500 mb-4">SEO, PPC, Social Media & Growth Strategies</p>
         <div class="mt-auto pt-4">
-            <button class="text-xs text-[#3fe0c5] border border-[#3fe0c5]/30 rounded-full px-4 py-1.5 hover:bg-[#3fe0c5]/10 transition">Learn More</button>
+            <a href="#contact" class="text-xs text-[#3fe0c5] border border-[#3fe0c5]/30 rounded-full px-4 py-1.5 hover:bg-[#3fe0c5]/10 transition inline-block">Learn More</a>
         </div>
     </div>
     
@@ -308,7 +317,7 @@ on trust.
         <h3 class="text-lg font-semibold mb-2">Web Development</h3>
         <p class="text-xs text-gray-500 mb-4">Custom Websites, Apps & E-commerce</p>
         <div class="mt-auto pt-4">
-            <button class="text-xs text-[#5fb3ff] border border-[#5fb3ff]/30 rounded-full px-4 py-1.5 hover:bg-[#5fb3ff]/10 transition">Learn More</button>
+            <a href="#contact" class="text-xs text-[#5fb3ff] border border-[#5fb3ff]/30 rounded-full px-4 py-1.5 hover:bg-[#5fb3ff]/10 transition inline-block">Learn More</a>
         </div>
     </div>
     
@@ -320,7 +329,7 @@ on trust.
         <h3 class="text-lg font-semibold mb-2">Graphics Design</h3>
         <p class="text-xs text-gray-500 mb-4">Branding, UI/UX & Visual Identity</p>
         <div class="mt-auto pt-4">
-            <button class="text-xs text-[#7fffd4] border border-[#7fffd4]/30 rounded-full px-4 py-1.5 hover:bg-[#7fffd4]/10 transition">Learn More</button>
+            <a href="#contact" class="text-xs text-[#7fffd4] border border-[#7fffd4]/30 rounded-full px-4 py-1.5 hover:bg-[#7fffd4]/10 transition inline-block">Learn More</a>
         </div>
     </div>
     
@@ -332,7 +341,7 @@ on trust.
         <h3 class="text-lg font-semibold mb-2">Content Creation</h3>
         <p class="text-xs text-gray-500 mb-4">Copywriting, Copywriting & Social Content</p>
         <div class="mt-auto pt-4">
-            <button class="text-xs text-[#3fe0c5] border border-[#3fe0c5]/30 rounded-full px-4 py-1.5 hover:bg-[#3fe0c5]/10 transition">Learn More</button>
+            <a href="#contact" class="text-xs text-[#3fe0c5] border border-[#3fe0c5]/30 rounded-full px-4 py-1.5 hover:bg-[#3fe0c5]/10 transition inline-block">Learn More</a>
         </div>
     </div>
     
@@ -355,7 +364,7 @@ on trust.
                 <span class="text-xs font-bold text-[#3fe0c5]">#Web Design</span>
                 <span class="text-xs font-bold text-[#3fe0c5]">#Web Development</span>
             </div>
-            <a href="DSEU.ac.in"><button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button></a>
+            <a href="https://dseu.ac.in" target="_blank" rel="noopener noreferrer" class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90 w-full">Open</a>
         </div>
     </div>
 
@@ -369,7 +378,7 @@ on trust.
                 <span class="text-xs font-bold text-[#3fe0c5]">#Web Design</span>
                 <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
             </div>
-           <a href="JustForDogs.in"><button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button></a>
+            <a href="https://justfordogs.in" target="_blank" rel="noopener noreferrer" class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90 w-full">Open</a>
         </div>
     </div>
 
@@ -383,7 +392,7 @@ on trust.
                 <span class="text-xs font-bold text-[#3fe0c5]">#Web Design</span>
                 <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
             </div>
-            <a href="ac4u.in"><button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button></a>
+            <a href="https://ac4u.in" target="_blank" rel="noopener noreferrer" class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90 w-full">Open</a>
         </div>
     </div>
 
@@ -397,7 +406,7 @@ on trust.
                 <span class="text-xs font-bold text-[#3fe0c5]">#Web Design</span>
                 <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
             </div>
-            <a href="recruit-g.com"><button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button></a>
+            <a href="https://recruit-g.com" target="_blank" rel="noopener noreferrer" class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90 w-full">Open</a>
         </div>
     </div>
 
@@ -410,7 +419,7 @@ on trust.
             <div class="flex flex-wrap gap-2 mb-6">
                 <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
             </div>
-            <a href="FutebolPlayHD.vip"><button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button></a>
+            <a href="https://futebolplayhd.com" target="_blank" rel="noopener noreferrer" class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90 w-full">Open</a>
         </div>
     </div>
 
@@ -424,7 +433,7 @@ on trust.
                 <span class="text-xs font-bold text-[#5fb3ff]">#SEO</span>
                 <span class="text-xs font-bold text-[#7fffd4]">#Content Writing</span>
             </div>
-            <a href="globalwebsters.com"><button class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90">Open</button></a>
+            <a href="https://globalwebsters.com" target="_blank" rel="noopener noreferrer" class="primary-btn py-3 rounded-xl font-bold transition uppercase text-xs hover:opacity-90 w-full">Open</a>
         </div>
     </div>
 
@@ -432,13 +441,14 @@ on trust.
 
 <!-- View All Projects Button -->
 <div class="text-center mt-12">
-    <button class="border border-gray-600 px-8 py-3 rounded-full font-medium text-sm hover:border-[#3fe0c5] hover:text-[#3fe0c5] transition">
+    <a href="#work" class="border border-gray-600 px-8 py-3 rounded-full font-medium text-sm hover:border-[#3fe0c5] hover:text-[#3fe0c5] transition inline-block">
         View All Projects
-    </button>
+    </a>
 </div>
 </section>
+
 <!-- CONTACT -->
-<section class="py-8 px-6 max-w-4xl mx-auto">
+<section id="contact" class="py-8 px-6 max-w-4xl mx-auto">
 <h2 class="text-center text-3xl font-bold mb-16">Get In <span class="text-[#3fe0c5]">Touch</span></h2>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -480,17 +490,17 @@ on trust.
     </div>
     
     <div>
-        <form class="space-y-6">
+        <form class="space-y-6" id="contactForm">
             <div>
-                <input type="text" placeholder="Your Name" class="w-full bg-[#0a121a] border border-gray-800 rounded-xl px-6 py-4 focus:border-[#3fe0c5] outline-none transition">
+                <input type="text" placeholder="Your Name" class="w-full bg-[#0a121a] border border-gray-800 rounded-xl px-6 py-4 focus:border-[#3fe0c5] outline-none transition" required>
             </div>
             <div>
-                <input type="email" placeholder="Your Email" class="w-full bg-[#0a121a] border border-gray-800 rounded-xl px-6 py-4 focus:border-[#3fe0c5] outline-none transition">
+                <input type="email" placeholder="Your Email" class="w-full bg-[#0a121a] border border-gray-800 rounded-xl px-6 py-4 focus:border-[#3fe0c5] outline-none transition" required>
             </div>
             <div>
-                <textarea placeholder="Your Message" rows="5" class="w-full bg-[#0a121a] border border-gray-800 rounded-xl px-6 py-4 focus:border-[#3fe0c5] outline-none transition"></textarea>
+                <textarea placeholder="Your Message" rows="5" class="w-full bg-[#0a121a] border border-gray-800 rounded-xl px-6 py-4 focus:border-[#3fe0c5] outline-none transition" required></textarea>
             </div>
-            <button type="submit" class="primary-btn w-full py-4 rounded-xl font-bold">Send Message</button>
+            <button type="submit" class="primary-btn w-full py-4 rounded-xl font-bold cursor-pointer">Send Message</button>
         </form>
     </div>
 </div>
@@ -510,13 +520,13 @@ on trust.
             </div>
 
             <div class="flex gap-6">
-                <a href="#" class="hover:text-teal-400 transition">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition">
                     <i data-lucide="twitter"></i>
                 </a>
-                <a href="#" class="hover:text-teal-400 transition">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition">
                     <i data-lucide="linkedin"></i>
                 </a>
-                <a href="#" class="hover:text-teal-400 transition">
+                <a href="mailto:contact@easytechsolution.com" class="hover:text-teal-400 transition">
                     <i data-lucide="mail"></i>
                 </a>
             </div>
@@ -529,6 +539,29 @@ on trust.
 </footer>
 </section>
 
-<script>lucide.createIcons();</script>
+<script>
+    lucide.createIcons();
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Form submission handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
+    });
+</script>
 </body>
 </html>
